@@ -4,7 +4,7 @@ const postsController = require('../controllers/posts-controller');
 
 
 
-router.get('/', postsController.index);
+router.get('/', postsController.search);
 
 router.post('/', postsController.store);
 

@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 
 
-async function index(req, res) {
+async function search(req, res) {
     const { keyword } = req.query;
 
     const data = await prisma.post.findMany({
@@ -23,6 +23,12 @@ async function index(req, res) {
             ],
         },
     });
+
+    if (!data) {
+        throw new Error("Not found");
+    }
+
+    return res.json(data);
 }
 
 
@@ -106,7 +112,7 @@ async function destroy(req, res) {
 
 
 module.exports = {
-    index,
+    search,
     show,
     store,
     update,
