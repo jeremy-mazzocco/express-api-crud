@@ -4,11 +4,11 @@ const postsController = require('../controllers/posts-controller');
 
 
 
-// router.get('/', postsController.index);
+router.get('/', postsController.index);
 
-// router.post('/', postsController.store);
+router.post('/', postsController.store);
 
-// router.get('/:slug', postsController.show);
+router.get('/:slug', postsController.show);
 
 // router.put('/:slug', postsController.update);
 
